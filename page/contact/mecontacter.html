@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>me contacter</title>
+    <style>
+      .multilignes {
+          white-space: pre-line; /* Conserve les retours à la ligne */
+      }
+  </style>
+</head>
+<body>
+    <a href="../../index.html" > Acceuil</a>
+    <center><h1>Me contacter</h1>
+        <a href="https://www.linkedin.com/in/baptiste-leveque-59394b328/" > Linkdin</a>
+        <p><a href="https://profile.indeed.com/?hl=fr_FR&co=FR&from=gnav-app-tracker" > Indeed</a></p>
+        <p><a href="https://candidat.francetravail.fr/profil-professionnel/#/profil/portfolio" > France travaille</a></p>
+
+        <form id="contact-form" method="POST" action="sendmail.php">
+            <div class="form-row form-error" style="display:none;"></div>
+            <div class="form-row">
+              <label for="contact-form-name">Nom entreprise:</label>
+              <input id="contact-form-name" class="form-input" type="text" name="name" required>
+            </div>
+            <div class="form-row">
+              <label for="contact-form-email">Email:</label>
+              <input id="contact-form-email" class="form-input" type="email" name="email" required>
+            </div>
+            <div class="form-row">
+              <label for="contact-form-message">Message:</label>
+              <textarea id="contact-form-message" class="form-input" name="message" required></textarea>
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+        
+    </center>
+</body>

@@ -1,0 +1,40 @@
+@font-face {
+    font-family: "titre";
+    src: url("LTRemark-Regular.otf");
+}
+
+h1{
+    font-family: "titre";
+}
+
+button{
+    font-size: 16px;
+    width: 250px;
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    background-color: #ff5050;
+    color: aliceblue;
+    font-family: "button";
+    transition-duration: 0.3s;
+    box-shadow: 0 9px #999;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #ff0000;
+}
+
+button:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+p{
+    font-size: 30;
+}
+.envoyer{
+    background-color: #7650ff;
+    width: 150px;
+}
+.envoyer:hover{
+    background-color: #3700ff;
+}

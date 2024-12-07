@@ -28,10 +28,11 @@ button:hover{
 
 button:active {
     box-shadow: 0 5px #666;
-    transform: translateY(4px);
+    transform: translateY(6px);
   }
+
 p{
-    font-size: 30;
+    font-size: 30%;
 }
 .envoyer{
     background-color: #7650ff;

@@ -3,9 +3,11 @@
     src: url("LTRemark-Regular.otf");
 }
 
-h1{
+.titre{
     font-family: "titre";
+    font-size: 350%
 }
+
 
 button{
     font-size: 16px;
@@ -37,4 +39,13 @@ p{
 }
 .envoyer:hover{
     background-color: #3700ff;
+}
+
+a{
+    font-size: 150%;
+    color: crimson;
+}
+
+p{
+    font-size: 130%;
 }

@@ -31,9 +31,6 @@ button:active {
     transform: translateY(6px);
   }
 
-p{
-    font-size: 30%;
-}
 .envoyer{
     font-size: 16px;
     height: 30px;

@@ -1,61 +1,293 @@
+/* ─── Dark Mode ─── */
+:root {
+    --primary: #a5b4fc;          /* indigo plus clair pour bien ressortir sur fond sombre */
+    --primary-dark: #818cf8;
+    --text: #e5e7eb;             /* gris très clair / blanc doux */
+    --text-light: #9ca3af;       /* gris moyen pour sous-titres et liens */
+    --bg: #111111;               /* gris-noir très foncé – neutre, pas bleu */
+    --bg-darker: #0a0a0a;        /* encore plus sombre pour navbar ou cartes */
+    --white: #f3f4f6;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.6); /* ombre noire plus naturelle */
+    --border: #222222;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Police personnalisée (inchangée) */
 @font-face {
     font-family: "titre";
     src: url("LTRemark-Regular.otf");
 }
 
-.titre{
+.titre {
     font-family: "titre";
-    font-size: 350%
+    font-size: 350%;
+    color: var(--primary);       /* on met la couleur primaire pour le titre principal */
 }
 
+/* ─── Navbar ─── */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--bg-darker);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
 
-button{
+.nav-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--primary);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0;
+    transition: all 0.25s ease;
+    position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+    color: var(--primary);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2.5px;
+    bottom: -4px;
+    left: 0;
+    background: var(--primary);
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* ─── Hero / Main ─── */
+main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    margin-top: 80px; /* hauteur navbar */
+}
+
+.hero {
+    text-align: center;
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 9vw, 5.2rem);
+    margin-bottom: 1.4rem;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    color: var(--white);
+}
+
+.hero .subtitle {
+    font-size: 1.4rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.hero .intro {
+    font-size: 1.2rem;
+    color: var(--text);
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.95;
+}
+
+/* ─── Boutons anciens (si encore utilisés ailleurs) ─── */
+button,
+.envoyer {
     font-size: 16px;
-    width: 250px;
-    height: 30px;
+    padding: 0.7rem 1.5rem;
     border-radius: 8px;
     border: none;
-    background-color: #ff5050;
-    color: aliceblue;
-    font-family: "button";
-    transition-duration: 0.3s;
-    box-shadow: 0 9px #999;
     cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
-button:hover{
-    background-color: #ff0000;
+
+button {
+    background-color: #ef4444;    /* rouge plus adapté au dark */
+    color: white;
+}
+
+button:hover {
+    background-color: #dc2626;
+    transform: translateY(-2px);
 }
 
 button:active {
-    box-shadow: 0 5px #666;
-    transform: translateY(6px);
-  }
-
-.envoyer{
-    font-size: 16px;
-    height: 30px;
-    border-radius: 8px;
-    border: none;
-    color: aliceblue;
-    font-family: "button";
-    transition-duration: 0.3s;
-    box-shadow: 0 9px #999;
-    cursor: pointer;
-    background-color: #7650ff;
-    width: 150px;
-}
-.envoyer:hover{
-    background-color: #3700ff;
-}
-.envoyer:active{
-        box-shadow: 0 5px #666;
-        transform: translateY(6px);
+    transform: translateY(2px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
 }
 
-.accueil{
-    width: 110px;
+.envoyer {
+    background-color: #8b5cf6;    /* violet-indigo */
+    color: white;
 }
 
-p{
-    size: 130%;
+.envoyer:hover {
+    background-color: #7c3aed;
+    transform: translateY(-2px);
+}
+
+.envoyer:active {
+    transform: translateY(2px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 900px) {
+    .nav-container {
+        padding: 0 1.5rem;
+    }
+    .nav-links {
+        gap: 1.4rem;
+    }
+    .nav-links a {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* → menu burger à ajouter plus tard */
+    }
+    .hero h1 {
+        font-size: 3.4rem;
+    }
+    .hero .subtitle {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 0 1rem;
+    }
+    .logo {
+        font-size: 1.4rem;
+    }
+}
+
+.about {
+    text-align: left;
+    max-width: 720px;
+    margin: 0 auto 3rem;
+    font-size: 1.15rem;
+}
+
+.about p {
+    margin-bottom: 1.4rem;
+}
+
+.about strong {
+    color: var(--primary);
+}
+
+.about ul {
+    list-style: none;
+    margin: 1.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.about ul li {
+    margin-bottom: 1.2rem;
+    position: relative;
+    padding-left: 1.8rem;
+}
+
+.about ul li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+/* Ajustement pour le lien actif dans la navbar */
+.nav-links a.active {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* Limite la taille des images de veille pour qu'elles ne débordent pas */
+.veille-image {
+    max-width: 100%;                /* Ne dépasse jamais la largeur du conteneur */
+    height: auto;                   /* Garde les proportions */
+    display: block;
+    margin: 0 auto;                 /* Centre l'image */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid var(--border);
+}
+
+/* Option : limite la hauteur maximale si tu veux éviter les images trop hautes */
+.veille-image {
+    max-height: 80vh;               /* 80% de la hauteur de l'écran visible */
+    object-fit: contain;            /* Garde tout visible sans déformer */
+}
+
+/* Pour les petits écrans (mobile) */
+@media (max-width: 768px) {
+    .veille-image {
+        max-height: 60vh;           /* Plus petit sur mobile pour éviter scroll excessif */
+    }
 }

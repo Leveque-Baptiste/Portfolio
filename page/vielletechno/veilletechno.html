@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veille Technologique – Baptiste Lévêque</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../../style/style.css">
+</head>
+<body>
+
+    <!-- Navbar fixe -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../../index.html" class="logo">Baptiste Lévêque</a>
+            
+            <ul class="nav-links">
+                <li><a href="../presentation/presentation.html"><i class="fas fa-user"></i> Présentation</a></li>
+                <li><a href="../competence/porte_feuille_des_compétence.html"><i class="fas fa-tools"></i> Compétences</a></li>
+                <li><a href="../experience/expérience_pro.html"><i class="fas fa-briefcase"></i> Expérience</a></li>
+                <li><a href="../cv/moncv.html"><i class="fas fa-file-alt"></i> CV</a></li>
+                <li><a href="../vielletechno/veilletechno.html" class="active"><i class="fas fa-lightbulb"></i> Veille techno</a></li>
+                <li><a href="../contact/mecontacter.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <main>
+        <div class="hero">
+            <h1 class="titre">Veille sur projet personnelle</h1>
+            
+            <section class="veille-section">
+                <h2 class="sous-titre">Thème : Développement 2D avec Unity 6 – Projet "Sprite Flight"</h2>
+                
+                <p>
+                    Dans le cadre de ma formation en BTS SIO SLAM et de mon intérêt pour le game dev, j'ai suivi le tutoriel officiel Unity Learn <strong>"2D Beginner Game: Sprite Flight"</strong> (mis à jour pour Unity 6 en 2025–2026).<br>
+                    Il s'agit d'un mini-jeu arcade 2D où l'on contrôle un vaisseau triangulaire qui doit esquiver des obstacles volants (style asteroid dodge).
+                </p>
+
+                <div class="veille-image-container">
+                    <img src="../../photo/player_layer.png" alt="Capture d'écran du projet Sprite Flight dans Unity 6" class="veille-image">
+                    <p class="image-caption">Capture de mon projet Sprite Flight dans Unity 6 – Vaisseau contrôlé à la souris, obstacles, score, explosion de particules et UI simple.</p>
+                </div>
+
+                <h3>Points clés du tutoriel et de Unity 6 en 2D (veille mars 2026)</h3>
+                <ul>
+                    <li><strong>Workflow 2D amélioré</strong> : Unity 6 renforce les outils 2D (Sprite Editor, Tilemap, Physics 2D optimisée). RigidBody2D reste central pour les mouvements dynamiques (AddForce pour propulsion, comme dans mon vaisseau).</li>
+                    <li><strong>Changements RigidBody2D</strong> : velocity est obsolète → remplacé par linearVelocity (avec linearVelocityX/Y). J'ai dû adapter mon script PlayerController pour Unity 6.</li>
+                    <li><strong>Particules & VFX</strong> : Système de particules intégré pour l'explosion et la traînée du booster (facile à paramétrer dans Unity 6).</li>
+                    <li><strong>UI Toolkit</strong> : Utilisé pour le score et le highscore (plus moderne que l'ancien uGUI pour des interfaces simples).</li>
+                    <li><strong>Performance & Mobile</strong> : Unity 6 optimise mieux le 2D pour WebGL et mobile (important si je veux publier sur itch.io ou Play Store plus tard).</li>
+                </ul>
+
+                <h3>Ce que j'en retiens pour mon avenir pro</h3>
+                <p>
+                    Ce projet m'a permis de consolider :
+                    <ul>
+                        <li>Les bases de la physique 2D (RigidBody2D + forces)</li>
+                        <li>La gestion d'input (Input System ou legacy Input)</li>
+                        <li>Les collisions et triggers (OnCollisionEnter2D)</li>
+                        <li>UI dynamique et score persistant</li>
+                    </ul>
+                    C'est un excellent exercice pour comprendre comment structurer un jeu simple mais complet, ce qui est transferable au développement d'applications interactives ou de simulations (ex : outils de formation, visualisations de données en 2D).
+                </p>
+
+                <p class="sources">
+                    Sources principales :<br>
+                    → Tutoriel officiel Unity Learn : <a href="https://learn.unity.com/course/2d-beginner-game-sprite-flight" target="_blank">2D Beginner Game: Sprite Flight (Unity 6)</a><br>
+                    → Release notes Unity 6 : Améliorations 2D Physics & RigidBody2D (linearVelocity, etc.)<br>
+                    → Discussions Unity Forums & Reddit (2025–2026) sur migration RigidBody2D
+                </p>
+            </section>
+        </div>
+    </main>
+
+</body>
+</html>

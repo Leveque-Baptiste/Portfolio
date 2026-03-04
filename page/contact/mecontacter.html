@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Me Contacter – Baptiste Lévêque</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../../style/style.css">
+    <!-- EmailJS (CDN officiel) -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="contact.js" defer></script>
+</head>
+<body>
+
+    <!-- Navbar fixe -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../../index.html" class="logo">Baptiste Lévêque</a>
+            
+            <ul class="nav-links">
+                <li><a href="../presentation/presentation.html"><i class="fas fa-user"></i> Présentation</a></li>
+                <li><a href="../competence/porte_feuille_des_compétence.html"><i class="fas fa-tools"></i> Compétences</a></li>
+                <li><a href="../experience/expérience_pro.html"><i class="fas fa-briefcase"></i> Expérience</a></li>
+                <li><a href="../cv/moncv.html"><i class="fas fa-file-alt"></i> CV</a></li>
+                <li><a href="../vielletechno/veilletechno.html"><i class="fas fa-lightbulb"></i> Veille techno</a></li>
+                <li><a href="../contact/mecontacter.html" class="active"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <main>
+        <div class="hero">
+            <h1 class="titre">Me Contacter</h1>
+
+            <section class="contact-section">
+                <p class="intro">
+                    N'hésitez pas à me contacter pour toute opportunité d'alternance, stage, projet ou simple discussion technique !
+                </p>
+
+                <div class="contact-links">
+                    <a href="https://www.linkedin.com/in/baptiste-leveque-59394b328/" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                </div>
+
+                <form id="contact-form" class="contact-form">
+                    <div class="form-message" id="form-success" style="display: none;">
+                        <p class="success">Message envoyé avec succès ! Je vous répondrai rapidement.</p>
+                    </div>
+                    <div class="form-message" id="form-error" style="display: none;">
+                        <p class="error">Une erreur est survenue. Veuillez réessayer.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-form-name">Nom / Entreprise :</label>
+                        <input type="text" id="contact-form-name" name="name" placeholder="Votre nom ou nom de l'entreprise" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-form-email">Email :</label>
+                        <input type="email" id="contact-form-email" name="email" placeholder="votre.email@exemple.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-form-message">Message :</label>
+                        <textarea id="contact-form-message" name="message" rows="6" placeholder="Votre message ici..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="envoyer">Envoyer le message</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+</body>
+</html>
